@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body style="font-family: Sawarabi Mincho">
+  <div id="app" class="text-white">
+    <div id="app" class="fixed left-0 items-center w-full bg-teal-500 lg:bg-blue-500 lg:static">
+      <header class="container flex items-center justify-between h-16 mx-auto pd-1">
+        <a href="./index.html"
+          class="m-1 text-3xl font-semibold rounded hover:bg-teal-600 lg:hover:bg-blue-600 lg:text-4xl">PORT FOLIO</a>
+        <div>
+          <button @click="isOpen = !isOpen">
+            <svg class="w-6 h-6 m-1 fill-current lg:hidden" viewBox="0 0 24 24">
+              <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
+            </svg>
+          </button>
+        </div>
+      </header>
+    </div>
+    <div :class="isOpen ? 'block' : 'hidden'"
+      class="fixed left-0 w-full mt-16 text-center bg-teal-500 lg:block lg:bg-blue-500 lg:static lg:mt-0">
+      <ul class="lg:flex lg:justify-end">
+        <li class="border-b lg:border-none"><a href="./index.html"
+            class="block px-8 py-2 m-1 my-1 rounded hover:bg-teal-600 lg:hover:bg-blue-600">自己紹介</a></li>
+        <li class="border-b lg:border-none"><a href="./introduction.html"
+            class="block px-8 py-2 m-1 my-1 rounded hover:bg-teal-600 lg:hover:bg-blue-600">製作物</a></li>
+        <li class=""><a href="./others.html"
+            class="block px-8 py-2 m-1 my-1 rounded hover:bg-teal-600 lg:hover:bg-blue-600">その他</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="pt-16 lg:pt-0">
+    <div class="mt-16 text-3xl font-semibold text-center bg-teal-100">
+      <h1 class="border-b shadow lg:bg-blue-100">制作物</h1>
+    </div>
+  </div>
+  <div class="my-4">
+    <div class="flex">
+      <img src="./img/nanpure_1.png" alt="nanpure.png" height="50%" width="50%">
+      <div class="w-full">
+        <div class="ml-1 mr-1 font-semibold text-center lg:mt-16">
+          <h1 class="mt-4 text-4xl">ナンプレ</h1>
+          <h1 class="text-3xl">JavaScript</h1>
+          <h1 class="text-3xl">2022/09</h1>
+          <a class="text-blue-500" target="_blank" href="https://qiita.com/macaroni-guratan/items/8a935d5513614ad8078a">Qiitaの記事</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-left lg:text-center">
+    <div class="m-2 border-b">
+      <h1>htmlの勉強を初めて少しした頃、初心者用のコンテストに応募するためにJavascriptでナンプレを作りました。</h1>
+      <h1>この作成をするまでは知識をつけてアウトプットを  あまりできていなかったのですがこの作成で基本的な知識が定着したような気がします。</h1>
+      <a href="https://macaroni-guratan.github.io/nanpure/" target="_blank" class="w-full font-semibold text-center text-blue-500 border-b">制作物のページへ</a>
+      <a href="https://github.com/macaroni-guratan/nanpure" target="_blank" class="w-full font-semibold text-center text-blue-500 border-b">Githubのページへ</a>
+    </div>
+    <div>
+      <h1 class="mt-16 text-4xl text-center">製作中</h1>
+    </div>
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        isOpen: false,
+      }
+    });
+  </script>
+</body>
+
+</html>
